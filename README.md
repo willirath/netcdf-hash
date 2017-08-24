@@ -2,11 +2,13 @@
 
 This aims at becoming a proof of concept for hashing netCDF data sets based on their contents rather than on their binary representation on disk.
 
+
 ## Problem
 
 For a data set (being defined by variables, dimensions, attributes, their order, etc.), there is an almost infinite number of ways to be represented as a netCDF file:  With different levels of deflation, different chunking, shuffling, etc., the exact same data can have many representations which on a higher level (think of a full `ncdump` dump) are completely equivalent.
 
 There are tools that *compare* the contents of two netCDF files: [cdo's diff](https://code.zmaw.de/projects/cdo/embedded/index.html#x1-470002.1.3) or [nccmp](http://nccmp.sourceforge.net/).  These tools do, however, rely on both files being present on the same file system and at the same time and hence remote comparison of two or more netCDF files or verification of the integrity of the contents of a data set is not possible.
+
 
 ## Existing discussion and partial solutions
 
@@ -19,3 +21,16 @@ There are tools that *compare* the contents of two netCDF files: [cdo's diff](ht
 - <https://github.com/aidanheerdegen/nchash> aims at hashing `ncdump` output.
 
 - <https://github.com/Unidata/netcdf4-python/issues/646> was a first attempt to (re)-start the discussion.
+
+
+## Example data
+
+Example data sets have been copied from
+<https://www.unidata.ucar.edu/software/netcdf/examples/files.html>.
+
+There are example data sets in [example_data/](example_data/).  Update them by
+running
+```bash
+./update_example_data.sh
+```
+from within the root of this repository.
