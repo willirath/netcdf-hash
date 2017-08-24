@@ -62,3 +62,11 @@ from within the root of this repository.
 global content-based hash from four different representations of an example
 data set, storing it in an global attribute of the files, and re-calculates and
 verifies the hashes against the global attribute.
+
+
+## Solution?
+
+On the netcdfgroup mailing list, Charlie Zender pointed out that NCO
+essentially does what I wanted:  <http://nco.sf.net/nco.html#md5>
+
+[ncks_digest_demo.sh](ncks_digest_demo.sh) puts this into a demo file.
