@@ -59,4 +59,6 @@ from within the root of this repository.
 ## First Demo
 
 [demo_001.ipynb](demo_001.ipynb) contains a short demonstration calculating a
-global file hash from four different representations of an example data set.
+global content-based hash from four different representations of an example
+data set, storing it in an global attribute of the files, and re-calculates and
+verifies the hashes against the global attribute.
