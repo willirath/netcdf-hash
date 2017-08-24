@@ -12,15 +12,25 @@ There are tools that *compare* the contents of two netCDF files: [cdo's diff](ht
 
 ## Existing discussion and partial solutions
 
-- <https://www.esrl.noaa.gov/psd/people/dave.allured/data/netcdf/scripts/nc-add-checksum> adds an MD5 checksum of a netCDF file to the global attributes of the same netCDF file and <https://www.esrl.noaa.gov/psd/people/dave.allured/data/netcdf/scripts/nc-verify-checksum> verifies the checksum against a version of the file with the attribute set to an emtpy string.
+- <https://www.esrl.noaa.gov/psd/people/dave.allured/data/netcdf/scripts/nc-add-checksum>
+  adds an MD5 checksum of a netCDF file to the global attributes of the same
+  netCDF file and
+  <https://www.esrl.noaa.gov/psd/people/dave.allured/data/netcdf/scripts/nc-verify-checksum>
+  verifies the checksum against a version of the file with the attribute set to
+  an emtpy string.
 
-- <http://www.unidata.ucar.edu/mailing_lists/archives/netcdfgroup/2005/thread.html#00016> looks like the mailing list thread leading to the tools above.  But there's also some discussion about incorporating the functionality directly into `ncks`.
+- <http://www.unidata.ucar.edu/mailing_lists/archives/netcdfgroup/2005/thread.html#00016>
+  looks like the mailing list thread leading to the tools above.  But there's
+  also some discussion about incorporating the functionality directly into
+  `ncks`.
 
-- <https://gehrcke.de/2013/07/bitwise-identity-of-netcdf-data-hashing-numpy-arrays/> outlines a Python-based approach to hashing netCDF variables.
+- <https://gehrcke.de/2013/07/bitwise-identity-of-netcdf-data-hashing-numpy-arrays/>
+  outlines a Python-based approach to hashing netCDF variables.
 
 - <https://github.com/aidanheerdegen/nchash> aims at hashing `ncdump` output.
 
-- <https://github.com/Unidata/netcdf4-python/issues/646> was a first attempt to (re)-start the discussion.
+- <https://github.com/Unidata/netcdf4-python/issues/646> was a first attempt to
+  (re)-start the discussion.
 
 
 ## Example data
@@ -34,3 +44,9 @@ running
 ./update_example_data.sh
 ```
 from within the root of this repository.
+
+
+## First Demo
+
+[demo_001.ipynb](demo_001.ipynb) contains a short demonstration calculating a
+global file hash from four different representations of an example data set.
