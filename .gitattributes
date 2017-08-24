@@ -1,1 +1,6 @@
 *.nc filter=lfs diff=lfs merge=lfs -text
+example_data/madis-sao.nc filter=lfs diff=lfs merge=lfs -text
+example_data/madis-sao.nc.3 filter=lfs diff=lfs merge=lfs -text
+example_data/madis-sao.nc.4 filter=lfs diff=lfs merge=lfs -text
+example_data/madis-sao.nc.6 filter=lfs diff=lfs merge=lfs -text
+example_data/madis-sao.nc.7 filter=lfs diff=lfs merge=lfs -text
