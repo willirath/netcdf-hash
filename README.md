@@ -37,7 +37,9 @@ of the contents of a data set is not possible.
 - <https://gehrcke.de/2013/07/bitwise-identity-of-netcdf-data-hashing-numpy-arrays/>
   outlines a Python-based approach to hashing netCDF variables.
 
-- <https://github.com/aidanheerdegen/nchash> aims at hashing `ncdump` output.
+- <https://github.com/aidanheerdegen/nchash> aims at hashing the cheaper parts
+  (CDL header, time stamps, file sizes) as a quick plausibility check for very
+  large files.
 
 - <https://github.com/Unidata/netcdf4-python/issues/646> was a first attempt to
   (re)-start the discussion.
