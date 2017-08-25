@@ -6,11 +6,15 @@ mkdir -p ${tmp_dir}
 cd ${tmp_dir}
 
 # get example data and convert to 4 different representations (classic, full
-# netCDF4, 64-bit-offset, netCDF4-classic)
-example_file_url="https://www.unidata.ucar.edu/software/netcdf/examples/madis-sao.nc"
-example_file="madis-sao.nc"
+# netCDF4, 64-bit-offset, netCDF4-classic).  Use deflation level 1 with
+# shuffling for the netCDF4* files.
+example_file_url="https://www.unidata.ucar.edu/software/netcdf/examples/smith_sandwell_topo_v8_2.nc"
+example_file=`basename ${example_file_url}`
 curl ${example_file_url} -o ${example_file}
-for kind in 3 4 6 7; do
+for kind in 4 7; do
+    nccopy -s -d 1 -${kind} ${example_file} ${example_file}.${kind}
+done
+for kind in 3 6; do
     nccopy -${kind} ${example_file} ${example_file}.${kind}
 done
 
@@ -18,7 +22,7 @@ done
 # nco md5-hash attributes
 for kind in "" ".3" ".4" ".6" ".7"; do
     file_name=${example_file}${kind}
-    ncks -a -C --md5_write_attribute -O ${file_name} md5_${file_name}
+    time ncks -a -C --md5_write_attribute -O ${file_name} md5_${file_name}
 done
 
 # Show what ncks did to the original file
